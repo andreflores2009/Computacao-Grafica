@@ -59,22 +59,114 @@ OpenCV (Open Source Computer Vision Library) é uma biblioteca de código aberto
      python --version
      ```
    - Você deve ver a versão do Python instalada.
+  
+   Para garantir que o comando `pip install opencv-python` seja reconhecido pelo sistema, siga estes passos para configurar corretamente o Python e o `pip` no seu ambiente:
 
-#### 2. Instalação do OpenCV
+### Passo a Passo
+
+#### 1. Verifique a Instalação do Python
+
+1. **Verifique se o Python está instalado**:
+   - Abra o terminal ou prompt de comando.
+   - Digite:
+     ```bash
+     python --version
+     ```
+   - Ou, se você estiver em um sistema onde `python` refere-se à versão 2.x e você instalou a versão 3.x, use:
+     ```bash
+     python3 --version
+     ```
+   - Você deve ver algo como `Python 3.x.x`.
+
+2. **Verifique se o `pip` está instalado**:
+   - Digite:
+     ```bash
+     pip --version
+     ```
+   - Ou, se estiver usando Python 3:
+     ```bash
+     pip3 --version
+     ```
+   - Você deve ver a versão do `pip` instalada.
+
+#### 2. Instale o `pip` (se necessário)
+
+Se o `pip` não estiver instalado, siga estes passos:
+
+1. **Baixe o script `get-pip.py`**:
+   - Acesse [get-pip.py](https://bootstrap.pypa.io/get-pip.py) e salve o arquivo no seu computador.
+
+2. **Execute o script `get-pip.py`**:
+   - Abra o terminal ou prompt de comando no diretório onde você salvou `get-pip.py`.
+   - Digite:
+     ```bash
+     python get-pip.py
+     ```
+   - Ou, se estiver usando Python 3:
+     ```bash
+     python3 get-pip.py
+     ```
+
+#### 3. Adicione Python e `pip` ao PATH
+
+Se o comando `pip` ainda não for reconhecido, pode ser que o Python e `pip` não estejam no PATH do sistema.
+
+1. **Windows**:
+   - Abra as Configurações do Sistema (pressione `Win + X` e selecione "Sistema").
+   - Clique em "Configurações avançadas do sistema".
+   - Clique em "Variáveis de Ambiente".
+   - Em "Variáveis do sistema", encontre a variável `Path` e clique em "Editar".
+   - Adicione o caminho para o diretório `Scripts` do Python (por exemplo, `C:\Python39\Scripts\`).
+
+2. **macOS e Linux**:
+   - Abra o Terminal.
+   - Edite seu arquivo de configuração do shell (`~/.bashrc`, `~/.zshrc`, etc.).
+   - Adicione a linha:
+     ```bash
+     export PATH="$PATH:/usr/local/bin/python3"
+     ```
+   - Salve o arquivo e recarregue o shell:
+     ```bash
+     source ~/.bashrc  # Ou ~/.zshrc, dependendo do seu shell
+     ```
+
+#### 4. Instale o OpenCV
+
+Agora você deve conseguir instalar o OpenCV utilizando `pip`:
 
 1. **Abra o terminal ou prompt de comando**.
-2. **Instale o OpenCV via pip**:
-   - Execute o comando:
+2. **Digite o comando**:
+   ```bash
+   pip install opencv-python
+   ```
+   - Ou, se estiver usando Python 3:
      ```bash
-     pip install opencv-python
-     ```
-3. **Instale o NumPy (necessário para manipulação de matrizes)**:
-   - Execute o comando:
-     ```bash
-     pip install numpy
+     pip3 install opencv-python
      ```
 
-#### 3. Escolha e Instalação da IDE
+#### 5. Verifique a Instalação do OpenCV
+
+Para verificar se o OpenCV foi instalado corretamente, você pode tentar importar o OpenCV em um script Python:
+
+1. **Crie um arquivo Python** (por exemplo, `test_opencv.py`).
+2. **Adicione o seguinte código**:
+   ```python
+   import cv2
+   print(cv2.__version__)
+   ```
+3. **Execute o script**:
+   ```bash
+   python test_opencv.py
+   ```
+   - Ou, se estiver usando Python 3:
+     ```bash
+     python3 test_opencv.py
+     ```
+
+Você deve ver a versão do OpenCV impressa no terminal, confirmando que a instalação foi bem-sucedida.
+
+
+#### 6. Escolha e Instalação da IDE
 
 ### Visual Studio Code (VS Code)
 
@@ -99,7 +191,7 @@ OpenCV (Open Source Computer Vision Library) é uma biblioteca de código aberto
      ```
    - Certifique-se de que o VS Code está usando o interpretador Python correto. Abra a paleta de comandos (`Ctrl+Shift+P`), digite `Python: Select Interpreter` e selecione o interpretador do seu ambiente virtual.
 
-#### 4. Escrevendo o Código para Desenhar um Quadrado
+#### 7. Escrevendo o Código para Desenhar um Quadrado
 
 1. **Crie um novo arquivo Python**:
    - No VS Code, clique em `File > New File` ou use o atalho `Ctrl+N`.
