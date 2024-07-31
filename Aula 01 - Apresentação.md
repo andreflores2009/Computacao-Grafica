@@ -91,25 +91,6 @@ OpenCV (Open Source Computer Vision Library) é uma biblioteca de código aberto
 
 #### 2. Instale o `pip` (se necessário)
 
-Se o `pip` não estiver instalado, siga estes passos:
-
-1. **Baixe o script `get-pip.py`**:
-   - Acesse [get-pip.py](https://bootstrap.pypa.io/get-pip.py) e salve o arquivo no seu computador.
-
-2. **Execute o script `get-pip.py`**:
-
-   - Abra o terminal ou prompt de comando no diretório onde você salvou `get-pip.py`.
-   - Digite:
-     ```bash
-     python get-pip.py
-     ```
-   - Ou, se estiver usando Python 3:
-     ```bash
-     python3 get-pip.py
-     ```
-
-#### 3. Adicione Python e `pip` ao PATH
-
 ### O que é o `pip`?
 
 - **Gerenciador de Pacotes**: `pip` é usado para instalar e gerenciar bibliotecas e pacotes adicionais em Python. Ele facilita a instalação de pacotes que não estão incluídos na biblioteca padrão do Python.
@@ -155,15 +136,41 @@ Se o `pip` não estiver instalado, siga estes passos:
    - Exemplo:
      ```bash
      pip --version
-     ```
 
 ### Vantagens do Uso do `pip`
 
 - **Facilidade de Instalação**: Simplifica o processo de instalação de pacotes, que pode ser feito com um único comando.
 - **Gerenciamento de Dependências**: Lida automaticamente com a instalação de dependências necessárias para os pacotes.
 - **Atualizações**: Facilita a atualização de pacotes para suas versões mais recentes.
-- **Ambientes Virtuais**: Funciona bem com ambientes virtuais, permitindo a criação de ambientes isolados para diferentes projetos.
+- **Ambientes Virtuais**: Funciona bem com ambientes virtuais, permitindo a criação de ambientes isolados para diferentes projetos.     ```
 
+Se o `pip` não estiver instalado, siga estes passos:
+
+1. **Baixe o script `get-pip.py`**:
+   - Acesse [get-pip.py](https://bootstrap.pypa.io/get-pip.py) e salve o arquivo no seu computador.
+
+2. **Execute o script `get-pip.py`**:
+
+   - Abra o terminal ou prompt de comando no diretório onde você salvou `get-pip.py`.
+   - Digite:
+     ```bash
+     python get-pip.py
+     ```
+   - Ou, se estiver usando Python 3:
+     ```bash
+     python3 get-pip.py
+     ```
+
+#### 3. Adicione Python e `pip` ao PATH
+
+Se o comando `pip` ainda não for reconhecido, pode ser que o Python e `pip` não estejam no PATH do sistema.
+
+1. **Windows**:
+   - Abra as Configurações do Sistema (pressione `Win + X` e selecione "Sistema").
+   - Clique em "Configurações avançadas do sistema".
+   - Clique em "Variáveis de Ambiente".
+   - Em "Variáveis do sistema", encontre a variável `Path` e clique em "Editar".
+   - Adicione o caminho para o diretório `Scripts` do Python (por exemplo, `C:\Python39\Scripts\`).
 
 
 #### 4. Instale o OpenCV
