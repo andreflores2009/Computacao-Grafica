@@ -117,8 +117,11 @@ if __name__ == "__main__":
 
 Este trecho verifica se o script está sendo executado diretamente (não importado como um módulo) e chama a função `main()` para iniciar o programa.
 
-![image](https://github.com/user-attachments/assets/9ea8e18c-4e8e-41c0-87fd-dd07fd2537a8)
+### Resultado 
 
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/9ea8e18c-4e8e-41c0-87fd-dd07fd2537a8" alt="Resultado">
+</p>p>
 
 ### Conclusão
 
@@ -126,5 +129,134 @@ Esse código é uma introdução simples ao uso de Pygame para desenhar vetores 
 linhas que representam vetores e processa eventos para manter o programa rodando até que o usuário decida fechá-lo. Este é um ótimo ponto de
 partida para quem deseja aprender sobre a manipulação de gráficos 2D com Python e Pygame.
 
+## Vetores 3D utilizando Python, Pygame e OpenGL
+
+Este código é um exemplo de como criar uma visualização 3D interativa usando `Pygame` para a janela e eventos de entrada, juntamente com `PyOpenGL` para renderização 3D. Vou explicar o código em detalhes, dividindo-o em partes-chave:
+
+### Importações
+```python
+import pygame
+from pygame.locals import *
+from OpenGL.GL import *
+from OpenGL.GLU import *
+```
+Essas importações incluem:
+- `pygame`: Uma biblioteca para criar jogos e gráficos, usada aqui para criar a janela e gerenciar eventos.
+- `OpenGL.GL` e `OpenGL.GLU`: Módulos do PyOpenGL que fornecem funções para desenhar formas e manipular a câmera em um espaço 3D.
+
+### Variáveis de controle de rotação
+```python
+rotation_x = 0
+rotation_y = 0
+mouse_down = False
+last_pos = (0, 0)
+```
+Essas variáveis são usadas para:
+- `rotation_x` e `rotation_y`: Controlar a rotação do objeto em torno dos eixos X e Y, respectivamente.
+- `mouse_down`: Verificar se o botão esquerdo do mouse está sendo pressionado.
+- `last_pos`: Armazena a posição do mouse na última vez que foi movido.
+
+### Função `draw_vector`
+```python
+def draw_vector():
+    glBegin(GL_LINES)
+    
+    # Desenhando o eixo X (vermelho)
+    glColor3f(1.0, 0.0, 0.0)
+    glVertex3f(0.0, 0.0, 0.0)
+    glVertex3f(1.0, 0.0, 0.0)
+    
+    # Desenhando o eixo Y (verde)
+    glColor3f(0.0, 1.0, 0.0)
+    glVertex3f(0.0, 0.0, 0.0)
+    glVertex3f(0.0, 1.0, 0.0)
+    
+    # Desenhando o eixo Z (azul)
+    glColor3f(0.0, 0.0, 1.0)
+    glVertex3f(0.0, 0.0, 0.0)
+    glVertex3f(0.0, 0.0, 1.0)
+    
+    # Desenhando um vetor customizado (laranja)
+    glColor3f(1.0, 0.5, 0.0)
+    glVertex3f(0.0, 0.0, 0.0)
+    glVertex3f(0.5, 0.5, 0.5)
+    
+    glEnd()
+```
+Esta função desenha três eixos (X, Y, Z) e um vetor customizado no espaço 3D:
+- `glBegin(GL_LINES)` e `glEnd()` definem o início e o fim do desenho de linhas.
+- `glColor3f` define a cor do vetor atual.
+- `glVertex3f` define os pontos de início e fim de cada vetor.
+
+### Função principal `main`
+```python
+def main():
+    global rotation_x, rotation_y, mouse_down, last_pos
+    
+    pygame.init()
+    display = (800, 600)
+    pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
+    gluPerspective(45, (display[0] / display[1]), 0.1, 50.0)
+    
+    # Posicionando a câmera
+    glTranslatef(0.0, 0.0, -5)
+    
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                return
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:  # Botão esquerdo do mouse
+                    mouse_down = True
+                    last_pos = pygame.mouse.get_pos()
+            elif event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    mouse_down = False
+            elif event.type == pygame.MOUSEMOTION:
+                if mouse_down:
+                    x, y = event.rel
+                    rotation_x += y
+                    rotation_y += x
+
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+        glLoadIdentity()
+        
+        # Aplicando as rotações baseadas no movimento do mouse
+        glRotatef(rotation_x, 1, 0, 0)
+        glRotatef(rotation_y, 0, 1, 0)
+
+        draw_vector()
+        pygame.display.flip()
+        pygame.time.wait(10)
+
+if __name__ == "__main__":
+    main()
+```
+Esta é a função principal do programa:
+- **Inicialização e Configuração**:
+  - `pygame.init()` inicializa todas as funcionalidades do Pygame.
+  - `display = (800, 600)` define o tamanho da janela.
+  - `pygame.display.set_mode` cria a janela com buffer duplo (`DOUBLEBUF`) e contexto OpenGL (`OPENGL`).
+  - `gluPerspective` define a perspectiva da câmera.
+  - `glTranslatef(0.0, 0.0, -5)` posiciona a câmera a 5 unidades "atrás" do centro da cena.
+
+- **Loop Principal**:
+  - O loop principal (`while True`) lida com eventos como fechar a janela (`pygame.QUIT`), pressionar ou soltar o botão do mouse, e mover o mouse. Dependendo dos movimentos do mouse, as variáveis `rotation_x` e `rotation_y` são ajustadas, permitindo a rotação do vetor e dos eixos desenhados.
+  - `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)` limpa a tela para a próxima renderização.
+  - `glLoadIdentity()` reseta a matriz de transformações, essencial para evitar acúmulos de transformações em cada quadro.
+  - `glRotatef` aplica as rotações baseadas na interação do mouse.
+  - `draw_vector()` desenha os vetores e eixos.
+  - `pygame.display.flip()` atualiza a janela com o que foi desenhado.
+  - `pygame.time.wait(10)` adiciona um pequeno delay para que o programa não consuma todos os recursos do CPU.
+
+### Resultado 
+<p align="center">
+     <img src="https://github.com/user-attachments/assets/be7bd64e-9498-4ade-ab42-47ce1a9985c9" alt="Resultado 3D">
+</p>
+
+
+### Resumo
+Este código cria uma janela onde vetores e eixos 3D são desenhados e podem ser rotacionados usando o mouse. É um exemplo básico, mas poderoso, de como criar gráficos 3D interativos usando Pygame e OpenGL.
 
 
