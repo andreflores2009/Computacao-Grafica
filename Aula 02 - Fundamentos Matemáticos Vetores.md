@@ -117,7 +117,8 @@ if __name__ == "__main__":
 
 Este trecho verifica se o script está sendo executado diretamente (não importado como um módulo) e chama a função `main()` para iniciar o programa.
 
-![image](https://github.com/user-attachments/assets/09d75744-de2d-4a47-b991-bfa7e58fbf1e)
+![image](https://github.com/user-attachments/assets/9ea8e18c-4e8e-41c0-87fd-dd07fd2537a8)
+
 
 ### Conclusão
 
