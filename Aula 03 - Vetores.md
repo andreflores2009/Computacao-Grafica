@@ -1,32 +1,11 @@
 
-
-## Exemplo de Equações
-
-Você pode renderizar fórmulas matemáticas como esta:
-
-$$
-\mathbf{A} + \mathbf{B} = \begin{bmatrix} A_1 + B_1 \\ A_2 + B_2 \end{bmatrix}
-$$
-
 ## Adição de Vetores
 
 A adição de vetores é uma operação que combina dois vetores para criar um novo vetor. O vetor resultante é encontrado somando as componentes correspondentes dos vetores originais.
 
 ### Como Funciona:
+![image](https://github.com/user-attachments/assets/370546dc-e89c-4b07-a2af-fd91c674336d)
 
-Dado dois vetores \(\mathbf{A} = \begin{bmatrix} A_1 \\ A_2 \end{bmatrix}\) e \(\mathbf{B} = \begin{bmatrix} B_1 \\ B_2 \end{bmatrix}\) em um espaço bidimensional, a soma dos vetores \(\mathbf{A} + \mathbf{B}\) é dada por:
-
-$$
-\mathbf{A} + \mathbf{B} = \begin{bmatrix} A_1 + B_1 \\ A_2 + B_2 \end{bmatrix}
-$$
-
-### Exemplo:
-
-Se \(\mathbf{A} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}\) e \(\mathbf{B} = \begin{bmatrix} 1 \\ 4 \end{bmatrix}\), então:
-
-$$
-\mathbf{A} + \mathbf{B} = \begin{bmatrix} 2 + 1 \\ 3 + 4 \end{bmatrix} = \begin{bmatrix} 3 \\ 7 \end{bmatrix}
-$$
 
 ### Interpretação Geométrica:
 
@@ -38,53 +17,47 @@ Multiplicar um vetor por um escalar é uma operação que redimensiona o vetor s
 
 ### Como Funciona:
 
-Dado um vetor \(\mathbf{A} = \begin{bmatrix} A_1 \\ A_2 \end{bmatrix}\) e um escalar \(k\), a multiplicação do vetor por um escalar é dada por:
-
-$$
-k\mathbf{A} = \begin{bmatrix} k \times A_1 \\ k \times A_2 \end{bmatrix}
-$$
-
-### Exemplo:
-
-Se \(\mathbf{A} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}\) e \(k = 4\), então:
-
-$$
-4\mathbf{A} = \begin{bmatrix} 4 \times 2 \\ 4 \times 3 \end{bmatrix} = \begin{bmatrix} 8 \\ 12 \end{bmatrix}
-$$
+![image](https://github.com/user-attachments/assets/8402ccbf-4e8a-48a9-9959-a141da07bb16)
 
 ### Interpretação Geométrica:
 
-Geometricamente, multiplicar um vetor por um escalar \(k\) estica ou comprime o vetor. Se \(k > 1\), o vetor é alongado; se \(0 < k < 1\), o vetor é encurtado; se \(k < 0\), além de ser redimensionado, a direção do vetor é invertida.
+Geometricamente, multiplicar um vetor por um escalar `k` estica ou comprime o vetor. Se `k > 1`, o vetor é alongado; se `0 < k < 1`, o vetor é encurtado; se `k < 0`, além de ser redimensionado, a direção do vetor é invertida.
+
 
 ## Magnitude de um vetor
 
-Para um vetor bidimensional \(\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\), a magnitude é calculada usando o teorema de Pitágoras:
+![image](https://github.com/user-attachments/assets/a8dd0c87-cadf-4059-b8ce-2d24aed7d6a5)
 
-$$
-|\mathbf{v}| = \sqrt{v_1^2 + v_2^2}
-$$
+### Significado da Magnitude
 
-Esse mesmo conceito se aplica a vetores em dimensões superiores. Para um vetor tridimensional \(\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}\), a magnitude é dada por:
+- Fisicamente: Se o vetor representa um deslocamento no espaço, a magnitude seria a distância percorrida.
+- Em termos de vetores de força: A magnitude indicaria a intensidade da força.
 
-$$
-|\mathbf{v}| = \sqrt{v_1^2 + v_2^2 + v_3^2}
-$$
+A magnitude é sempre um número não negativo. Um vetor nulo (onde todas as componentes são zero) tem uma magnitude de zero.
 
-De forma geral, para um vetor \(\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \dots \\ v_n \end{bmatrix}\) em um espaço de dimensão \(n\), a magnitude é:
+## Vetor Unitário / Normalizado
+Um vetor unitário é um vetor que tem magnitude igual a 1. Vetores unitários são muito úteis em diversas aplicações de matemática e física porque mantêm a direção de um vetor, mas normalizam seu tamanho, facilitando cálculos e manipulações.
 
-$$
-|\mathbf{v}| = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}
-$$
+### Como Normalizar um Vetor
+
+![image](https://github.com/user-attachments/assets/26792b84-33e1-401a-955c-2a26507972bf)
 
 ### Exemplo Prático
 
-Se você tiver um vetor \(\mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}\) no plano bidimensional, a magnitude seria calculada como:
+![image](https://github.com/user-attachments/assets/f290bc40-2d4d-431f-8f1a-3bd242beb1bb)
 
-$$
-|\mathbf{v}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
-$$
+### Propriedades dos Vetores Unitários
 
-Aqui, o vetor \(\mathbf{v}\) tem uma magnitude de 5 unidades.
+- Direção: Um vetor unitário tem a mesma direção que o vetor original, mas sua magnitude é sempre 1.
+- Facilita Cálculos: Vetores unitários são frequentemente usados para simplificar problemas em física, computação gráfica e geometria, especialmente em situações que envolvem direção, como ao definir uma direção no espaço, mas onde a magnitude não é relevante.
+
+### Aplicações dos Vetores Unitários
+
+- Direção em Espaço 3D: Em computação gráfica, vetores unitários são usados para representar direções em espaço tridimensional, como a direção de uma câmera, uma luz ou a orientação de um objeto.
+- Vetores Normais: Em geometria computacional, os vetores normais às superfícies são geralmente representados como vetores unitários.
+- Cálculos em Física: Em física, vetores unitários são usados para representar direções de forças, velocidades e outras grandezas vetoriais, mantendo a direção, mas ignorando a magnitude original.
+
+Um vetor unitário é um vetor de magnitude 1 que aponta na mesma direção que o vetor original. A normalização é o processo de converter qualquer vetor em um vetor unitário, dividindo cada componente pela magnitude do vetor original. Vetores unitários são amplamente usados em diversas disciplinas para simplificar cálculos e representar direções no espaço.
 
 ## Propriedades Matemáticas Relacionadas a Vetores e Escalares
 
@@ -96,121 +69,25 @@ Escalares são simplesmente números comuns que podem ser inteiros, racionais, r
 
 Vetores são objetos matemáticos que possuem tanto magnitude (ou comprimento) quanto direção. Eles podem ser representados como uma sequência ordenada de números que correspondem às suas componentes em diferentes direções.
 
-1. **Comutatividade da adição de vetores:**
-   $$
-   \mathbf{P} + \mathbf{Q} = \mathbf{Q} + \mathbf{P}
-   $$
-   Isso significa que a ordem em que você soma os vetores não altera o resultado.
+Aqui está a versão ajustada para Markdown simples, sem notação LaTeX, mas ainda clara e compreensível:
 
-2. **Associatividade da adição de vetores:**
-   $$
-   (\mathbf{P} + \mathbf{Q}) + \mathbf{R} = \mathbf{P} + (\mathbf{Q} + \mathbf{R})
-   $$
-   A soma de três vetores não depende da maneira como os pares de vetores são agrupados.
+![image](https://github.com/user-attachments/assets/aa0aa064-5b7a-4a56-9418-ef992ae5604d)
+![image](https://github.com/user-attachments/assets/7cac1cd6-8a3d-4fb8-9973-b5d5731d4e9f)
 
-3. **Associatividade da multiplicação escalar:**
-   $$
-   (ab)\mathbf{P} = a(b\mathbf{P})
-   $$
-   Multiplicar um vetor por dois escalares (um após o outro) é equivalente a multiplicar os dois escalares primeiro e, em seguida, multiplicar o vetor pelo resultado.
 
-4. **Distributividade da multiplicação escalar em relação à adição de vetores:**
-   $$
-   a(\mathbf{P} + \mathbf{Q}) = a\mathbf{P} + a\mathbf{Q}
-   $$
-   Um escalar multiplicando uma soma de vetores pode ser distribuído para cada vetor individualmente.
+Essas propriedades são fundamentais em álgebra linear e são usadas para manipular vetores e escalares de maneira consistente e previsível. Elas garantem que as operações com vetores e escalares sigam padrões matemáticos bem definidos.
 
-5. **Distributividade da multiplicação escalar em relação à adição de escalares:**
-   $$
-   (a + b)\mathbf{P} = a\mathbf{P} + b\mathbf{P}
-   $$
-   Se somarmos dois escalares antes de multiplicar por um vetor, é equivalente a multiplicar o vetor por cada escalar separadamente e, em seguida, somar os resultados.
-
-6. **Magnitude de um vetor:**
-   $$
-   |\mathbf{P}| \geq 0
-   $$
-   A magnitude (ou comprimento) de um vetor é sempre um número não negativo.
-
-7. **Magnitude nula:**
-   $$
-   |\mathbf{P}| = 0 \quad \text{se e somente se} \quad \mathbf{P} = \langle 0, 0, \ldots, 0 \rangle
-   $$
-   A magnitude de um vetor é zero apenas se o vetor for o vetor nulo, onde todas as suas componentes são zero.
-
-8. **Multiplicação escalar e magnitude:**
-   $$
-   |a\mathbf{P}| = |a||\mathbf{P}|
-   $$
-   A magnitude do produto de um escalar por um vetor é igual ao produto dos valores absolutos do escalar e da magnitude do vetor.
-
-9. **Desigualdade triangular:**
-   $$
-   |\mathbf{P} + \mathbf{Q}| \leq |\mathbf{P}| + |\mathbf{Q}|
-   $$
-   A magnitude da soma de dois vetores é sempre menor ou igual à soma das magnitudes dos vetores individuais. Isso reflete o conceito de que "o caminho direto é o mais curto", em termos de distâncias.
 
 ## Produto Escalar
 
 O produto escalar, também conhecido como **dot product** em inglês, é uma operação matemática que pode ser realizada entre dois vetores. O resultado do produto escalar é um número escalar (daí o nome "produto escalar"), e essa operação possui várias aplicações importantes na matemática, física e engenharia.
 
-Para dois vetores \(\mathbf{A}\) e \(\mathbf{B}\) em um espaço euclidiano, o produto escalar é definido como:
+![image](https://github.com/user-attachments/assets/b37d3f0d-c0b5-4ae7-a7f5-4f715e1027a7)
 
-$$
-\mathbf{A} \cdot \mathbf{B} = \sum_{i=1}^{n} A_i B_i = A_1 B_1 + A_2 B_2 + \dots + A_n B_n
-$$
-
-Aqui:
-- \(\mathbf{A} = \begin{bmatrix} A_1 \\ A_2 \\ \dots \\ A_n \end{bmatrix}\) e \(\mathbf{B} = \begin{bmatrix} B_1 \\ B_2 \\ \dots \\ B_n \end{bmatrix}\) são vetores com \(n\) componentes.
-- \(A_i\) e \(B_i\) são as componentes correspondentes dos vetores \(\mathbf{A}\) e \(\mathbf{B}\).
-
-### Exemplo em Dimensão 2
-
-Se \(\mathbf{A} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}\) e \(\mathbf{B} = \begin{bmatrix} 4 \\ 1 \end{bmatrix}\), então o produto escalar \(\mathbf{A} \cdot \mathbf{B}\) é:
-
-$$
-\mathbf{A} \cdot \mathbf{B} = (2 \times 4) + (3 \times 1) = 8 + 3 = 11
-$$
-
-O resultado é o escalar 11.
 
 ### Interpretação Geométrica
 
-Geometricamente, o produto escalar entre dois vetores \(\mathbf{A}\) e \(\mathbf{B}\) também pode ser expresso como:
-
-$$
-\mathbf{A} \cdot \mathbf{B} = |\mathbf{A}| |\mathbf{B}| \cos \theta
-$$
-
-Aqui:
-- \(|\mathbf{A}|\) e \(|\mathbf{B}|\) são as magnitudes dos vetores \(\mathbf{A}\) e \(\mathbf{B}\).
-- \(\theta\) é o ângulo entre os dois vetores.
-
-### Propriedades do Produto Escalar
-
-1. **Comutatividade:**
-   $$
-   \mathbf{A} \cdot \mathbf{B} = \mathbf{B} \cdot \mathbf{A}
-   $$
-   A ordem dos vetores não altera o resultado do produto escalar.
-
-2. **Distributividade:**
-   $$
-   \mathbf{A} \cdot (\mathbf{B} + \mathbf{C}) = \mathbf{A} \cdot \mathbf{B} + \mathbf{A} \cdot \mathbf{C}
-   $$
-   O produto escalar é distributivo em relação à adição de vetores.
-
-3. **Produto Escalar com o Vetor Nulo:**
-   $$
-   \mathbf{A} \cdot \mathbf{0} = 0
-   $$
-   Qualquer vetor escalar multiplicado pelo vetor nulo (\(\mathbf{0}\)) é igual a zero.
-
-4. **Produto Escalar de Vetores Ortogonais:**
-   $$
-   \mathbf{A} \cdot \mathbf{B} = 0 \quad \text{se \(\mathbf{A}\) e \(\mathbf{B}\) são ortogonais (ângulo de 90^\circ)}
-   $$
-   Dois vetores perpendiculares (ou ortogonais) têm um produto escalar igual a zero.
+![image](https://github.com/user-attachments/assets/857f11fa-aaf2-4742-a9c6-d25e17d0edf4)
 
 ### Aplicações do Produto Escalar
 
@@ -224,88 +101,79 @@ O produto vetorial, também conhecido como **cross product** em inglês, é uma 
 
 ### Definição de Produto Vetorial
 
-Dados dois vetores \(\mathbf{A}\) e \(\mathbf{B}\) em três dimensões:
-
-$$
-\mathbf{A} = \begin{bmatrix} A_x \\ A_y \\ A_z \end{bmatrix}, \quad \mathbf{B} = \begin{bmatrix} B_x \\ B_y \\ B_z \end{bmatrix}
-$$
-
-O produto vetorial \(\mathbf{A} \times \mathbf{B}\) é definido como:
-
-$$
-\mathbf{A} \times \mathbf{B} = \begin{bmatrix} A_y B_z - A_z B_y \\ A_z B_x - A_x B_z \\ A_x B_y - A_y B_x \end{bmatrix}
-$$
+![image](https://github.com/user-attachments/assets/6da6f66f-c894-4544-9b51-71b75da01eb2)
 
 ### Passo a Passo para Calcular o Produto Vetorial
 
-1. **Componentes \(x\), \(y\), \(z\):** Para cada componente do vetor resultante:
-   - Componente \(x\) (primeira linha): \( A_y B_z - A_z B_y \)
-   - Componente \(y\) (segunda linha): \( A_z B_x - A_x B_z \)
-   - Componente \(z\) (terceira linha): \( A_x B_y - A_y B_x \)
-
-2. **Forma Determinante:** O cálculo do produto vetorial pode ser entendido como o determinante de uma matriz construída a partir dos componentes dos vetores \(\mathbf{A}\) e \(\mathbf{B}\), com os vetores unitários \( \mathbf{i}, \mathbf{j}, \mathbf{k} \) na primeira linha:
-
-$$
-\mathbf{A} \times \mathbf{B} = \begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-A_x & A_y & A_z \\
-B_x & B_y & B_z
-\end{vmatrix}
-$$
-
-Esse determinante é calculado expandindo a matriz:
-
-$$
-\mathbf{A} \times \mathbf{B} = \mathbf{i}(A_y B_z - A_z B_y) - \mathbf{j}(A_x B_z - A_z B_x) + \mathbf{k}(A_x B_y - A_y B_x)
-$$
+![image](https://github.com/user-attachments/assets/04337e90-a523-426c-9c8e-fe8faacfad8f)
 
 ### Exemplo Prático
 
-Considere os vetores \(\mathbf{A} = \begin{bmatrix} 2 \\ 3 \\ 4 \end{bmatrix}\) e \(\mathbf{B} = \begin{bmatrix} 5 \\ 6 \\ 7 \end{bmatrix}\).
-
-O produto vetorial \(\mathbf{A} \times \mathbf{B}\) será:
-
-$$
-\mathbf{A} \times \mathbf{B} = \begin{bmatrix} 3 \times 7 - 4 \times 6 \\ 4 \times 5 - 2 \times 7 \\ 2 \times 6 - 3 \times 5 \end{bmatrix} = \begin{bmatrix} 21 - 24 \\ 20 - 14 \\ 12 - 15 \end{bmatrix} = \begin{bmatrix} -3 \\ 6 \\ -3 \end{bmatrix}
-$$
-
-O vetor resultante \(\mathbf{A} \times \mathbf{B} = \begin{bmatrix} -3 \\ 6 \\ -3 \end{bmatrix}\) é perpendicular aos vetores \(\mathbf{A}\) e \(\mathbf{B}\).
+![image](https://github.com/user-attachments/assets/80337d3c-53ca-45c5-8d31-d6c2caa794aa)
 
 ### Interpretação Geométrica
 
-- **Direção:** O vetor resultante do produto vetorial \(\mathbf{A} \times \mathbf{B}\) é perpendicular aos planos definidos pelos vetores \(\mathbf{A}\) e \(\mathbf{B}\). A direção desse vetor pode ser determinada pela regra da mão direita:
-  - Posicione a palma da mão direita ao longo do vetor \(\mathbf{A}\) e curve os dedos na direção do vetor \(\mathbf{B}\). O polegar apontará na direção do vetor \(\mathbf{A} \times \mathbf{B}\).
-
-- **Magnitude:** A magnitude do vetor resultante é igual à área do paralelogramo formado pelos vetores \(\mathbf{A}\) e \(\mathbf{B}\):
-  
-$$
-|\mathbf{A} \times \mathbf{B}| = |\mathbf{A}| |\mathbf{B}| \sin \theta
-$$
-
-Aqui, \(\theta\) é o ângulo entre \(\mathbf{A}\) e \(\mathbf{B}\), e \( |\mathbf{A}| \) e \( |\mathbf{B}| \) são as magnitudes dos vetores \(\mathbf{A}\) e \(\mathbf{B}\).
+[image](https://github.com/user-attachments/assets/37129658-b0af-4051-a93d-d06b8d3be564)
 
 ### Propriedades do Produto Vetorial
 
-1. **Anticomutatividade:** 
-   $$
-   \mathbf{A} \times \mathbf{B} = -(\mathbf{B} \times \mathbf{A})
-   $$
-   Inverter a ordem dos vetores inverte a direção do vetor resultante.
+![image](https://github.com/user-attachments/assets/c6d4995f-a6e4-409c-8874-236b59f30509)
 
-2. **Distribuição:** 
-   $$
-   \mathbf{A} \times (\mathbf{B} + \mathbf{C}) = \mathbf{A} \times \mathbf{B} + \mathbf{A} \times \mathbf{C}
-   $$
-   O produto vetorial é distributivo em relação à adição de vetores.
+O produto vetorial segue a regra da mão direita, conforme imagem abaixo
+- O indicador aponta na direção do vetor a;
+- A palma da mão (ou dedo médio) aponta na direção do vetor b;
+- O produto vetorial aponta na direção do polegar:
+- 
+  ![image](https://github.com/user-attachments/assets/70199f32-099b-4651-ab99-70baf608846a)
 
-3. **Produto Vetorial de Vetores Paralelos:** 
-   $$
-   \mathbf{A} \times \mathbf{B} = \mathbf{0} \quad \text{se \(\mathbf{A}\) e \(\mathbf{B}\) são paralelos}
-   $$
-   Se os vetores \(\mathbf{A}\) e \(\mathbf{B}\) são paralelos (ou seja, \(\theta = 0\) ou \(\theta = 180^\circ\)), então seu produto vetorial é o vetor nulo.
 
 ### Aplicações do Produto Vetorial
 
 - **Cálculo de Torque:** Em física, o torque é calculado como o produto vetorial entre a força aplicada e o vetor posição.
 - **Determinação de uma Normal:** Em computação gráfica, o produto vetorial é usado para encontrar o vetor normal a uma superfície.
 - **Cálculo da Área:** O produto vetorial pode ser usado para calcular a área de um paralelogramo formado por dois vetores.
+
+Para criar um exemplo utilizando a biblioteca `NumPy` em Python que demonstra o cálculo do produto vetorial (cross product) entre dois vetores, siga o exemplo abaixo:
+
+## Exemplo de Produto Vetorial usando NumPy
+
+```python
+import numpy as np
+
+# Definindo os vetores A e B
+vetor_a = np.array([2, 3, 4])
+vetor_b = np.array([5, 6, 7])
+
+# Calculando o produto vetorial (cross product)
+produto_vetorial = np.cross(vetor_a, vetor_b)
+
+# Exibindo o resultado
+print(f"Vetor A: {vetor_a}")
+print(f"Vetor B: {vetor_b}")
+print(f"Produto Vetorial (A x B): {produto_vetorial}")
+```
+
+### Como funciona o código:
+
+1. **Definição dos Vetores:**
+   - `vetor_a` e `vetor_b` são definidos como arrays NumPy, cada um com três componentes representando vetores em um espaço tridimensional.
+
+2. **Cálculo do Produto Vetorial:**
+   - A função `np.cross()` é usada para calcular o produto vetorial entre `vetor_a` e `vetor_b`.
+
+3. **Exibição do Resultado:**
+   - O código exibe os vetores originais e o vetor resultante do produto vetorial.
+
+### Saída esperada:
+
+Ao executar o código, a saída será:
+
+```
+Vetor A: [2 3 4]
+Vetor B: [5 6 7]
+Produto Vetorial (A x B): [-3  6 -3]
+```
+
+### Interpretação do Resultado:
+
+![image](https://github.com/user-attachments/assets/8eae3ba9-4405-4595-b4d6-f8000e8bd54e)
