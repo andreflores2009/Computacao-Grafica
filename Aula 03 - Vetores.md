@@ -1,3 +1,13 @@
+
+
+## Exemplo de Equações
+
+Você pode renderizar fórmulas matemáticas como esta:
+
+$$
+\mathbf{A} + \mathbf{B} = \begin{bmatrix} A_1 + B_1 \\ A_2 + B_2 \end{bmatrix}
+$$
+
 ## Adição de Vetores
 
 A adição de vetores é uma operação que combina dois vetores para criar um novo vetor. O vetor resultante é encontrado somando as componentes correspondentes dos vetores originais.
