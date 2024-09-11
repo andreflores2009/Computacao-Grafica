@@ -46,7 +46,33 @@ glTranslatef(-1.5f, 0.0f, -6.0f); // Move o triângulo para a esquerda
 glTranslatef(3.0f, 0.0f, 0.0f);   // Move o quadrado para a direita
 // Desenho do quadrado...
 ```
+Aqui está a tradução da parte solicitada:
 
+---
+
+### 5. Mudando modo de janela
+
+Finalmente, altere o código para alternar entre os modos de janela e tela cheia, de modo que o título no topo da janela fique correto.
+
+Certifique-se de também mudar o título na seção "// Crie Nossa Janela OpenGL" (logo acima deste código). Caso contrário, a janela em modo tela cheia terá um título diferente do modo janela.
+
+```cpp
+if (keys[VK_F1])                // A tecla F1 está sendo pressionada?
+{
+    keys[VK_F1] = FALSE;         // Se sim, define a tecla como FALSO
+    KillGLWindow();              // Fecha nossa janela atual
+    fullscreen = !fullscreen;    // Alterna entre os modos tela cheia / janela
+    // Recria nossa janela OpenGL (modificada)
+    if (!CreateGLWindow("Tutorial NeHe: Seu Primeiro Polígono", 640, 480, 16, fullscreen))
+    {
+        return 0;               // Sai se a janela não foi criada
+    }
+}
+```
+
+
+
+Essa é a tradução da parte faltante do tutorial.
 ## Considerações Finais
 Neste tutorial, cobrimos os fundamentos de como criar polígonos simples em uma janela OpenGL. Aprendemos como desenhar triângulos e quadrados, além de como mover objetos pela tela. Esses conceitos são essenciais para o desenvolvimento de gráficos mais complexos.
 
