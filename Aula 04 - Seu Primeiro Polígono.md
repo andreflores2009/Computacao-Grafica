@@ -68,7 +68,8 @@ if (keys[VK_F1])                // A tecla F1 está sendo pressionada?
         return 0;               // Sai se a janela não foi criada
     }
 }
-``
+```
+
 ![image](https://github.com/user-attachments/assets/4865dfda-de50-4335-8a2d-da7c101d10d4)
 
 ## Considerações Finais
