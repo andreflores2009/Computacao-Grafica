@@ -56,6 +56,9 @@ if (keys[VK_F1]) {
 }
 ```
 
+![image](https://github.com/user-attachments/assets/5a21500a-fd69-412e-b527-56426d56ed61)
+
+
 ## Conclusão
 Com este tutorial, você aprendeu a aplicar cores em polígonos simples utilizando OpenGL, criando efeitos de coloração plana e suave.
 
