@@ -133,6 +133,11 @@ draw_cube()
 pygame.display.flip()
 ```
 
+### 5. Resultado
+
+![image](https://github.com/user-attachments/assets/ebee1532-cabb-4ae8-97e9-28502f7b2497)
+
+
 ---
 
 ## Conclusão
