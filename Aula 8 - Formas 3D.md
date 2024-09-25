@@ -23,6 +23,77 @@ glVertex3f(1.0, -1.0, 1.0)  # Vértice inferior direito
 #### 1.2. Outros Lados da Pirâmide
 Cada face subsequente compartilha o ponto do topo e alterna as cores dos pontos inferiores para criar uma mistura suave entre os lados da pirâmide. A rotação acontece com a função `glRotatef`.
 
+Aqui está uma explicação detalhada da função `draw_pyramid()`:
+
+```python
+def draw_pyramid():
+    """Desenha a pirâmide."""
+    global rtri
+    glLoadIdentity()
+    glTranslatef(-1.5, 0.0, -6.0)
+    glRotatef(rtri, 0.0, 1.0, 0.0)
+    
+    glBegin(GL_TRIANGLES)
+    
+    # Frente
+    glColor3f(1.0, 0.0, 0.0)
+    glVertex3f(0.0, 1.0, 0.0)
+    glColor3f(0.0, 1.0, 0.0)
+    glVertex3f(-1.0, -1.0, 1.0)
+    glColor3f(0.0, 0.0, 1.0)
+    glVertex3f(1.0, -1.0, 1.0)
+
+    # Direita
+    glColor3f(1.0, 0.0, 0.0)
+    glVertex3f(0.0, 1.0, 0.0)
+    glColor3f(0.0, 0.0, 1.0)
+    glVertex3f(1.0, -1.0, 1.0)
+    glColor3f(0.0, 1.0, 0.0)
+    glVertex3f(1.0, -1.0, -1.0)
+
+    # Traseira
+    glColor3f(1.0, 0.0, 0.0)
+    glVertex3f(0.0, 1.0, 0.0)
+    glColor3f(0.0, 1.0, 0.0)
+    glVertex3f(1.0, -1.0, -1.0)
+    glColor3f(0.0, 0.0, 1.0)
+    glVertex3f(-1.0, -1.0, -1.0)
+
+    # Esquerda
+    glColor3f(1.0, 0.0, 0.0)
+    glVertex3f(0.0, 1.0, 0.0)
+    glColor3f(0.0, 0.0, 1.0)
+    glVertex3f(-1.0, -1.0, -1.0)
+    glColor3f(0.0, 1.0, 0.0)
+    glVertex3f(-1.0, -1.0, 1.0)
+    
+    glEnd()
+```
+
+#### `global rtri`
+Define que a variável `rtri` (responsável pela rotação da pirâmide) será usada e atualizada dentro da função.
+
+#### `glLoadIdentity()`
+Reseta a matriz de transformação, garantindo que todas as operações futuras sejam aplicadas a uma nova base de coordenadas.
+
+#### `glTranslatef(-1.5, 0.0, -6.0)`
+Move a pirâmide para a esquerda e um pouco para trás, posicionando-a corretamente na cena 3D.
+
+#### `glRotatef(rtri, 0.0, 1.0, 0.0)`
+Aplica uma rotação à pirâmide no eixo Y. O valor de `rtri` determina o ângulo de rotação.
+
+#### `glBegin(GL_TRIANGLES)`
+Inicia a definição dos vértices que formam as faces da pirâmide. Cada face será um triângulo.
+
+#### Desenhando as Faces
+As quatro faces da pirâmide são desenhadas uma por uma:
+- **Face frontal**: Define três vértices, começando com o ponto superior e dois pontos na base. As cores aplicadas são vermelho no topo, verde à esquerda e azul à direita.
+- **Face direita**: Define o ponto superior (vermelho) e alterna as cores nos vértices inferiores para manter a suavidade das cores.
+- **Face traseira e esquerda**: Seguem o mesmo padrão, alternando as cores entre verde e azul nos vértices inferiores.
+
+#### `glEnd()`
+Finaliza o desenho da pirâmide, aplicando todas as operações de desenho.
+
 ---
 
 ### 2. Desenhando o Cubo
