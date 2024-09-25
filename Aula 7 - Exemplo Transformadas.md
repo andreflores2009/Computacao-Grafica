@@ -19,12 +19,10 @@ from OpenGL.GLU import *
 ```python
 rtri = 0.0
 rquad = 0.0
-fullscreen = False
 ```
 
 - `rtri`: Armazena o ângulo de rotação do triângulo.
 - `rquad`: Armazena o ângulo de rotação do quadrado.
-- `fullscreen`: Controla se a aplicação está em modo tela cheia ou janela.
 
 ### 3. **Função `init()`**
 
@@ -108,7 +106,6 @@ def draw():
 
 ```python
 def main():
-    global fullscreen
     pygame.init()
     pygame.display.set_mode((640, 480), DOUBLEBUF | OPENGL)
     init()
@@ -118,26 +115,18 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            
             if event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
                     running = False
-                
-                if event.key == K_F1:
-                    fullscreen = not fullscreen
-                    pygame.display.quit()
-                    pygame.display.init()
-                    if fullscreen:
-                        pygame.display.set_mode((640, 480), DOUBLEBUF | OPENGL | FULLSCREEN)
-                    else:
-                        pygame.display.set_mode((640, 480), DOUBLEBUF | OPENGL)
-                    init()
 
         draw()
         pygame.display.flip()
         pygame.time.wait(10)
 
     pygame.quit()
+
+if __name__ == "__main__":
+    main()
 ```
 
 - `pygame.init()`: Inicializa o Pygame.
@@ -150,3 +139,8 @@ def main():
   - Chama a função `draw()` para desenhar o triângulo e o quadrado.
   - `pygame.display.flip()`: Atualiza a tela para mostrar o novo frame.
   - `pygame.time.wait(10)`: Espera 10 milissegundos entre os frames, controlando a taxa de atualização.
+
+- A linha `if __name__ == "__main__":` é uma verificação especial que determina se o script está sendo executado diretamente ou importado como um módulo em outro script.
+Quando o Python executa um arquivo, ele define uma variável especial chamada `__name__`. Se o arquivo está sendo executado diretamente (não importado), `__name__` será igual a `"__main__"`.
+- Se essa condição for verdadeira, o programa chama a função `main()`, iniciando a execução do programa.
+- Isso permite que o código seja reutilizável em outros scripts sem que a função `main()` seja executada automaticamente quando o arquivo for importado.
