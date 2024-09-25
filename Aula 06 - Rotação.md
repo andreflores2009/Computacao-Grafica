@@ -80,6 +80,3 @@ if (keys[VK_F1]) {
 ![image](https://github.com/user-attachments/assets/d4920659-4855-4ff7-8044-794bf30ffa36)
 
 
-## Conclusão
-Este tutorial demonstrou como aplicar rotação a objetos em OpenGL. A rotação pode ser ajustada nos eixos X, Y ou Z, dependendo da aplicação desejada.
-
