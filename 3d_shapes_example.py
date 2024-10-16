@@ -17,6 +17,26 @@ def init():
     glLoadIdentity()
     gluPerspective(45.0, 640.0 / 480.0, 0.1, 100.0)
     glMatrixMode(GL_MODELVIEW)
+    
+def draw_sphere_with_colored_wireframe():
+    """Desenha uma esfera com superfície sólida e wireframe colorido."""
+    
+    glPushMatrix()
+    glTranslatef(0.0, 0.0, -5.0)  # Posiciona a esfera no centro
+    
+    # Desenha a superfície da esfera (preenchida)
+    glColor3f(0.0, 0.5, 0.8)  # Define a cor da superfície (azul claro)
+    solid_sphere = gluNewQuadric()
+    gluQuadricDrawStyle(solid_sphere, GLU_FILL)  # Define o modo de desenho preenchido
+    gluSphere(solid_sphere, 2, 30, 30)  # Desenha a esfera preenchida
+    
+    # Desenha o wireframe (arestas) sobre a superfície
+    glColor3f(1.0, 0.0, 0.0)  # Define a cor das arestas (vermelho)
+    wire_sphere = gluNewQuadric()
+    gluQuadricDrawStyle(wire_sphere, GLU_LINE)  # Define o modo de desenho como wireframe (arestas)
+    gluSphere(wire_sphere, 2, 30, 30)  # Desenha a esfera wireframe
+    
+    glPopMatrix()
 
 def draw_pyramid():
     """Desenha a pirâmide."""
