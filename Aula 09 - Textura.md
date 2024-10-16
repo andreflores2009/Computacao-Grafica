@@ -178,6 +178,11 @@ if __name__ == "__main__":
 ### Resultado 
 ![image](https://github.com/user-attachments/assets/eb864315-a56d-48c5-9561-1334bdd7348d)
 
+
+
+https://github.com/user-attachments/assets/5734e0d0-3555-463f-a981-6527118e735a
+
+
 ### Conclusão
 
 Neste exemplo, carregamos uma textura e aplicamos à superfície de uma esfera, criando um efeito visual mais realista. O OpenGL facilita a aplicação de texturas em objetos complexos como esferas com o uso de `gluQuadricTexture()` e `gluSphere()`. Experimente diferentes imagens de textura para ver como elas são aplicadas na superfície curva da esfera.
