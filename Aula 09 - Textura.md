@@ -189,6 +189,6 @@ Neste exemplo, carregamos uma textura e aplicamos à superfície de uma esfera, 
 
 ### Exercício:
 
-1. Tente substituir a imagem da textura por outra imagem.
-2. Ajuste as coordenadas de textura para observar como diferentes partes da imagem são mapeadas no cubo.
+1. Tente substituir a imagem da textura por outra imagem. (opção para encontrar texturas: [opengameart](https://opengameart.org/node/7781)
+3. Ajuste as coordenadas de textura para observar como diferentes partes da imagem são mapeadas no cubo.
 
