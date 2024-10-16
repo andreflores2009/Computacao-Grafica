@@ -100,6 +100,10 @@ Aplicar texturas no OpenGL envolve carregar uma imagem, enviar os dados para a G
 ### Resultado
 ![image](https://github.com/user-attachments/assets/6262c023-c806-4bad-8ac8-edbf4f9a54ba)
 
+https://github.com/user-attachments/assets/d6d3a1ad-0c04-498a-ac2f-e5ade7c3b646
+
+
+
 ## Exemplo 2
 
 Vamos repetir o processo de aplicação de textura, mas agora aplicaremos a textura em uma esfera. Vamos seguir um procedimento semelhante ao que fizemos para o cubo.
