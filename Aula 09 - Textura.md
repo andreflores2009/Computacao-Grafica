@@ -7,7 +7,7 @@ O primeiro passo é carregar a imagem da textura e convertê-la para um formato 
 
 ```python
 def load_texture():
-    texture_surface = pygame.image.load('C:/Users/Dell/Downloads/bricks2.jpg')
+    texture_surface = pygame.image.load('local_sua_img.png')
     texture_data = pygame.image.tostring(texture_surface, "RGB", True)
     width, height = texture_surface.get_rect().size
 
@@ -99,6 +99,88 @@ Aplicar texturas no OpenGL envolve carregar uma imagem, enviar os dados para a G
 
 ### Resultado
 ![image](https://github.com/user-attachments/assets/6262c023-c806-4bad-8ac8-edbf4f9a54ba)
+
+## Exemplo 2
+
+Vamos repetir o processo de aplicação de textura, mas agora aplicaremos a textura em uma esfera. Vamos seguir um procedimento semelhante ao que fizemos para o cubo.
+
+### 1. Carregando a Textura
+
+Primeiro, vamos carregar a textura que será aplicada à esfera, utilizando a mesma função `load_texture()`:
+
+```python
+def load_texture():
+    texture_surface = pygame.image.load('C:/Users/Dell/Downloads/bricks2.jpg')
+    texture_data = pygame.image.tostring(texture_surface, "RGB", True)
+    width, height = texture_surface.get_rect().size
+
+    glEnable(GL_TEXTURE_2D)
+    texture_id = glGenTextures(1)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, texture_data)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+```
+
+### 2. Aplicando a Textura à Esfera
+
+Agora, modificamos a função `draw_sphere()` para aplicar a textura na esfera:
+
+```python
+def draw_sphere():
+    """Desenha uma esfera com textura."""
+    
+    glPushMatrix()
+    glTranslatef(0.0, 0.0, -12.0)  # Posiciona a esfera no centro
+    
+    glBindTexture(GL_TEXTURE_2D, 1)  # Vincula a textura
+    
+    # Desenha a superfície da esfera com textura
+    textured_sphere = gluNewQuadric()
+    gluQuadricTexture(textured_sphere, GL_TRUE)  # Habilita textura na esfera
+    gluSphere(textured_sphere, 2, 32, 32)  # Desenha a esfera com textura
+    
+    glPopMatrix()
+```
+
+### 3. Loop Principal
+
+O loop principal continua o mesmo, chamando a função `draw_sphere()` em vez de `draw_cube()`:
+
+```python
+def main():
+    pygame.init()
+    pygame.display.set_mode((640, 480), DOUBLEBUF | OPENGL)
+    init()
+    load_texture()
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    running = False
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+        draw_sphere()
+        pygame.display.flip()
+        pygame.time.wait(10)
+
+    pygame.quit()
+
+if __name__ == "__main__":
+    main()
+```
+
+### Resultado 
+![image](https://github.com/user-attachments/assets/eb864315-a56d-48c5-9561-1334bdd7348d)
+
+### Conclusão
+
+Neste exemplo, carregamos uma textura e aplicamos à superfície de uma esfera, criando um efeito visual mais realista. O OpenGL facilita a aplicação de texturas em objetos complexos como esferas com o uso de `gluQuadricTexture()` e `gluSphere()`. Experimente diferentes imagens de textura para ver como elas são aplicadas na superfície curva da esfera.
 
 ### Exercício:
 
