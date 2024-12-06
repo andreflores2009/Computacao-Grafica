@@ -32,3 +32,11 @@
 - **Documentação**: 20 %
 
 **Boa sorte e divirta-se com a criação gráfica!**
+
+Exemplos desnvolvidos:
+Gabriel Castagna: 
+![image](https://github.com/user-attachments/assets/05f7d31a-e4b4-49f5-9469-e8c304119de5)
+
+
+
+
