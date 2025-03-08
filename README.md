@@ -75,4 +75,4 @@ Bem-vindo ao repositório da disciplina de Fundamentos da Computação Gráfica!
 
 ## Contato
 Para mais informações ou dúvidas, entre em contato com o professor 
-responsável através do e-mail: herysson.figueiredo@ufn.edu.br ou guilhermechagaskurtz@gmail.com
+responsável através do e-mail: herysson.figueiredo@ufn.edu.br ou guilhermechagaskurtz@gmail.com, andre.flores@ufn.edu.br
